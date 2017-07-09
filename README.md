@@ -4,7 +4,7 @@ A project spawned from my own curiosity of the statistics that could be produced
 ## How it works
 This program uses mySQL connector to connect to a local database
 
-For now, the program generates a bar graph of the number of movies that I have seen by decade
+For now, the program generates a bar graph of the number of movies that I have seen in each decade starting from 1950
 
 ## Execution
 This program can be executed by the following command:
