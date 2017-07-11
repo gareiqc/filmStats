@@ -3,15 +3,6 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 import numpy as np
 
-def get_total(cnx):
-	cursor = cnx.cursor()
-	query = 'select count(title) from movies_seen'
-	cursor.execute(query)
-	for a in cursor:
-		total_count = a[0]
-	cursor.close()
-	return total_count
-
 def get_genre(cnx, genre):
 	cursor = cnx.cursor()
 	cursor.execute('select count(title) from movies_seen where genre like %s', (genre,))
@@ -26,10 +17,9 @@ def gather(cnx):
 	for i in range(0, len(genre_query)):
 		query_count = get_genre(cnx, genre_query[i])
 		m_data.append(query_count)
-	total = get_total(cnx)
-	plot_results(m_data, total)
+	plot_results(m_data)
 
-def plot_results(m_counts, total):
+def plot_results(m_counts):
 	labels = 'Comedy', 'Fantasy', 'Romance', 'Drama', 'Science Fiction', 'Horror', 'Crime', 'Action', 'Mystery'
 	sizes = m_counts
 	plt.rcParams['font.size'] = '10.0'
