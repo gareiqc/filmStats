@@ -1,6 +1,7 @@
 import mysql.connector
 import sys
 import dec_bar as dcb
+import genre_pie as gpc
 
 def authenticate(creds):
 	keys = []
@@ -14,5 +15,8 @@ def authenticate(creds):
 
 if __name__ == "__main__":
 	cnx = authenticate(sys.argv[1])
+	#displays bar chart
 	dcb.gather(cnx)
+	#displays pie chart
+	gpc.gather(cnx)
 	cnx.close()

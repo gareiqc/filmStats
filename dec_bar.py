@@ -1,3 +1,4 @@
+# generates bar graph of the number of movies that I have seen in each decade starting from 1950
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -8,6 +9,7 @@ def execute(cnx, start_year, end_year):
 	for a in cursor:
 		result = a[0]
 	cursor.close()
+	#return the number of movies seen for the specified year range
 	return result
 
 def gather(cnx):
@@ -41,4 +43,6 @@ def plot_results(m_counts):
 		ax1.text(rect.get_x() + rect.get_width()/2.0, rect.get_height() + 0.1, m_counts[i], va = 'bottom', color = 'black')
 		i += 1
 	plt.yticks(np.arange(0, 31, 5.0))
-	plt.show()
+	#plt.show()
+	plt.savefig('dec_bar.png')
+	plt.cla()
