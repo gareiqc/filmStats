@@ -4,7 +4,11 @@ A project spawned from my own curiosity of the statistics that could be produced
 ## How it works
 This program uses mySQL connector to connect to a local database
 
-For now, the program generates a bar graph of the number of movies that I have seen in each decade starting from 1950
+For now, the program generates:
+
+-A bar graph of the number of movies that I have seen in each decade starting from 1950 (dec_bar.py)
+
+-A pie chart of the percent of movies that I have seen of each genre (genre_pie.py)
 
 ## Execution
 This program can be executed by the following command:
